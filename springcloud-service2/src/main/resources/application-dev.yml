@@ -13,6 +13,10 @@ eureka:
     register-with-eureka: true
 ###因为自己是为注册中心，不需要检索服务
     fetch-registry: true
+###关闭自我保护机制，假如服务端不发送心跳包直接剔除，间隔2s中剔除一次
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
 ######服务名字
 spring:
   application:
