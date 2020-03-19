@@ -16,4 +16,4 @@ eureka:
 ######服务名字
 spring:
   application:
-    name: eureka-service
+    name: eureka-server
