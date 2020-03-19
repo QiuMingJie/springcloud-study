@@ -14,5 +14,11 @@ eureka:
     register-with-eureka: true
 ###检索服务
     fetch-registry: true
+###心跳间隔设置
+  instance:
+  ###最小呼气时间，即服务器在收到一个心跳后等待的时间，假如超过2s没收到下个心跳包则剔除
+    lease-expiration-duration-in-seconds: 2
+  ###心跳间隔，每隔1s发送一个心跳包给服务器
+    lease-renewal-interval-in-seconds: 1
 
 
