@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
  * @description
  */
 @RestController
+@RequestMapping("/order")
 public class OrderController {
 
     @Autowired
@@ -19,8 +20,7 @@ public class OrderController {
 
     @RequestMapping(value = "/getOrder",method = RequestMethod.GET)
     public String getNumber() {
-        String forObject = restTemplate.getForObject("http://localhost:8000/getMember", String.class);
-        System.out.println(forObject);
-        return "";
+        String forObject = restTemplate.getForObject("http://app-itmayiedu-member/getMember", String.class);
+        return forObject;
     }
 }
