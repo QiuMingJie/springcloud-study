@@ -14,11 +14,14 @@ eureka:
     register-with-eureka: true
 ###检索服务
     fetch-registry: true
+#####最初复制实例信息到eureka服务器所需的时间（s），默认为40秒
+    initial-instance-info-replication-interval-seconds: 2
+####  复制实例变化信息到eureka服务器所需要的时间间隔（s），默认为30秒
+    instance-info-replication-interval-seconds: 2
 ###心跳间隔设置
   instance:
   ###最小呼气时间，即服务器在收到一个心跳后等待的时间，假如超过2s没收到下个心跳包则剔除
     lease-expiration-duration-in-seconds: 2
   ###心跳间隔，每隔1s发送一个心跳包给服务器
     lease-renewal-interval-in-seconds: 1
-
 
