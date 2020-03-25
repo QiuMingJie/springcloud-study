@@ -9,6 +9,49 @@
     <name>springcloud-client-member</name>
     <description>Demo project for Spring Boot</description>
 
+    <!--<parent>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+        <!--<version>2.0.1.RELEASE</version>-->
+    <!--</parent>-->
+    <!--&lt;!&ndash; 管理依赖 &ndash;&gt;-->
+    <!--<dependencyManagement>-->
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.cloud</groupId>-->
+                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
+                <!--<version>Finchley.M7</version>-->
+                <!--<type>pom</type>-->
+                <!--<scope>import</scope>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+    <!--</dependencyManagement>-->
+    <!--<dependencies>-->
+        <!--&lt;!&ndash; SpringBoot整合Web组件 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; SpringBoot整合eureka客户端 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--&lt;!&ndash;<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>&ndash;&gt;-->
+            <!--&lt;!&ndash;<version>2.0.1.RELEASE</version>&ndash;&gt;-->
+            <!--&lt;!&ndash;假设用zookeeper作为注册中心&ndash;&gt;-->
+            <!--<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
+    <!--&lt;!&ndash; 注意： 这里必须要添加， 否者各种依赖有问题 &ndash;&gt;-->
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>spring-milestones</id>-->
+            <!--<name>Spring Milestones</name>-->
+            <!--<url>https://repo.spring.io/libs-milestone</url>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+    <!--</repositories>-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -37,6 +80,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>2.0.1.RELEASE</version>
+            <!--<artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>-->
         </dependency>
     </dependencies>
     <!-- 注意： 这里必须要添加， 否者各种依赖有问题 -->

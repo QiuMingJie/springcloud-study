@@ -20,7 +20,7 @@ public class OrderController {
 
     @RequestMapping(value = "/getOrder",method = RequestMethod.GET)
     public String getNumber() {
-        String forObject = restTemplate.getForObject("http://app-itmayiedu-member/getMember", String.class);
+        String forObject = restTemplate.getForObject("http://app-itmayiedu-member/member/getMember", String.class);
         return forObject;
     }
 }
