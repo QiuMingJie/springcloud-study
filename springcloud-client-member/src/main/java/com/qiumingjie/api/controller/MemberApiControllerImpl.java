@@ -2,6 +2,8 @@ package com.qiumingjie.api.controller;
 
 import com.qiumingjie.springcloudapi.api.MemberApi;
 import com.qiumingjie.springcloudapi.api.dto.User;
+import com.qiumingjie.springcloudcommon.base.BaseApiService;
+import com.qiumingjie.springcloudcommon.base.ResponseBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -25,13 +27,20 @@ public class MemberApiControllerImpl implements MemberApi {
 
     @Override
     @RequestMapping("/getMember")
-    public User getMember() {
+    public ResponseBase getMember() {
+
         try {
-            Thread.sleep(800L);
+            Thread.sleep(1500L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return new User("xiaoqiu", "123456", Thread.currentThread().getName()+"端口是" + port);
+        return BaseApiService.setResultSuccess(new User("xiaoqiu", "123456", Thread.currentThread().getName() + "端口是" + port));
     }
+
+    @Override
+    public ResponseBase getCurrentMember() {
+        return BaseApiService.setResultSuccess("fd");
+    }
+
 
 }

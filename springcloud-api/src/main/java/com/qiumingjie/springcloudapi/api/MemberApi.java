@@ -1,6 +1,6 @@
 package com.qiumingjie.springcloudapi.api;
 
-import com.qiumingjie.springcloudapi.api.dto.User;
+import com.qiumingjie.springcloudcommon.base.ResponseBase;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -12,8 +12,12 @@ public interface MemberApi {
 
     /**
      * 获取用户基本信息接口
+     *
      * @return 用户基本信息
      */
     @RequestMapping("/member/getMember")
-    public User getMember();
+    public ResponseBase getMember();
+
+    @RequestMapping("/member/getCurrentMember")
+    public ResponseBase getCurrentMember();
 }

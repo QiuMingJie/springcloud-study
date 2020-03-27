@@ -48,6 +48,12 @@
             <artifactId>springcloud-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <!--        导入common包-->
+        <dependency>
+            <groupId>com.qiumingjie</groupId>
+            <artifactId>springcloud-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <!-- 注意： 这里必须要添加， 否者各种依赖有问题 -->

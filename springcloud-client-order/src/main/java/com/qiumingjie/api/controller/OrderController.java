@@ -1,7 +1,7 @@
 package com.qiumingjie.api.controller;
 
 import com.qiumingjie.feign.MemberApiFeign;
-import com.qiumingjie.springcloudapi.api.dto.User;
+import com.qiumingjie.springcloudcommon.base.ResponseBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -48,8 +48,13 @@ public class OrderController {
     }
 
     @RequestMapping("/getMember")
-    public User getMember() {
+    public ResponseBase getMember() {
         System.out.println("开始进行调用");
         return memberApiFeign.getMember();
+    }
+
+    @RequestMapping("/getCurrentMember")
+    public ResponseBase getCurrentMember() {
+        return memberApiFeign.getCurrentMember();
     }
 }

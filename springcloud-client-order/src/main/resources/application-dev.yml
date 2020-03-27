@@ -26,4 +26,12 @@ eureka:
     lease-expiration-duration-in-seconds: 2
   ###心跳间隔，每隔1s发送一个心跳包给服务器
     lease-renewal-interval-in-seconds: 1
+###设置feign客户端超时时间默认是1.5s
+##默认开启支持ribbon
+ribbon:
+  ###指的是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间。
+  ReadTimeout: 5000
+  ###指的是建立连接后从服务器读取到可用资源所用的时间。
+  ConnectTimeout: 5000
+
 
