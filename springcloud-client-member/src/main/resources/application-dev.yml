@@ -3,23 +3,24 @@ server:
   port: 8001
 ###服务名称(服务注册到eureka名称)
 spring:
-    application:
-        name: app-itmayiedu-member
+  application:
+    name: app-itmayiedu-member
 ###服务注册到eureka地址
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8100/eureka,http://localhost:9100/eureka
-###需要将我注册到服务
+    ###需要将我注册到服务
     register-with-eureka: true
-###检索服务
+    ###检索服务
     fetch-registry: true
-###心跳间隔设置
+  ###心跳间隔设置
   instance:
-  ###最小呼气时间，即服务器在收到一个心跳后等待的时间，假如超过2s没收到下个心跳包则剔除
+    ###最小呼气时间，即服务器在收到一个心跳后等待的时间，假如超过2s没收到下个心跳包则剔除
     lease-expiration-duration-in-seconds: 2
-  ###心跳间隔，每隔1s发送一个心跳包给服务器
+    ###心跳间隔，每隔1s发送一个心跳包给服务器
     lease-renewal-interval-in-seconds: 1
+
 
 
 

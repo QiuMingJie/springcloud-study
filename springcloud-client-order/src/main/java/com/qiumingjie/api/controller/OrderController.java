@@ -1,6 +1,8 @@
 package com.qiumingjie.api.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.qiumingjie.feign.MemberApiFeign;
+import com.qiumingjie.springcloudcommon.base.BaseApiService;
 import com.qiumingjie.springcloudcommon.base.ResponseBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -47,14 +49,26 @@ public class OrderController {
         return getOrder;
     }
 
+    /**
+     * 解决服务雪崩效应
+     * 开启hystrix，使用@hystrix时默认开启线程池隔离方式，开启服务降级，开启服务熔断机制
+     * fallbackMethod指定服务降级时返回值
+     * @return
+     */
+    @HystrixCommand(fallbackMethod = "fallBackMethod")
     @RequestMapping("/getMember")
     public ResponseBase getMember() {
-        System.out.println("开始进行调用");
+        System.out.println("开启了服务保护机制,线程名："+Thread.currentThread().getName());
         return memberApiFeign.getMember();
     }
 
     @RequestMapping("/getCurrentMember")
     public ResponseBase getCurrentMember() {
+        System.out.println("没开启服务保护机制,线程名："+Thread.currentThread().getName());
         return memberApiFeign.getCurrentMember();
+    }
+
+    public ResponseBase fallBackMethod() {
+        return BaseApiService.setResultSuccess("系统繁忙，请稍后再试");
     }
 }

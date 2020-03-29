@@ -38,9 +38,15 @@ public class MemberApiControllerImpl implements MemberApi {
     }
 
     @Override
+    @RequestMapping("/getCurrentMember")
     public ResponseBase getCurrentMember() {
         return BaseApiService.setResultSuccess("fd");
     }
 
+    @Override
+    @RequestMapping("/getUser")
+    public String fff(User user) {
+        return user.toString();
+    }
 
 }

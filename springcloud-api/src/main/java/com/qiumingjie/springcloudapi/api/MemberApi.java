@@ -1,5 +1,6 @@
 package com.qiumingjie.springcloudapi.api;
 
+import com.qiumingjie.springcloudapi.api.dto.User;
 import com.qiumingjie.springcloudcommon.base.ResponseBase;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,4 +21,7 @@ public interface MemberApi {
 
     @RequestMapping("/member/getCurrentMember")
     public ResponseBase getCurrentMember();
+
+    @RequestMapping("/member/getUser")
+    public String fff(User user);
 }
