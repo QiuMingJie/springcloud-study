@@ -8,6 +8,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  * @date 2020-03-25 21:11
  * @description
  */
-@FeignClient(name = "app-itmayiedu-member")
+@FeignClient(name = "app-itmayiedu-member",fallback = MemberApiFeignFallback.class)
 public interface MemberApiFeign  extends MemberApi {
 }

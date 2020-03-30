@@ -62,6 +62,12 @@ public class OrderController {
         return memberApiFeign.getMember();
     }
 
+    @RequestMapping("/getMember1")
+    public ResponseBase getMember1() {
+        System.out.println("开启了服务保护机制,线程名："+Thread.currentThread().getName());
+        return memberApiFeign.getMember();
+    }
+
     @RequestMapping("/getCurrentMember")
     public ResponseBase getCurrentMember() {
         System.out.println("没开启服务保护机制,线程名："+Thread.currentThread().getName());

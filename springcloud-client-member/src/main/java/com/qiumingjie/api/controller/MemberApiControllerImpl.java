@@ -28,12 +28,13 @@ public class MemberApiControllerImpl implements MemberApi {
     @Override
     @RequestMapping("/getMember")
     public ResponseBase getMember() {
-
+        System.out.println("开始调用member");
         try {
             Thread.sleep(1500L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        System.out.println("完成调用member");
         return BaseApiService.setResultSuccess(new User("xiaoqiu", "123456", Thread.currentThread().getName() + "端口是" + port));
     }
 
