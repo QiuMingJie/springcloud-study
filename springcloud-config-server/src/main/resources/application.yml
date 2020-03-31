@@ -16,6 +16,11 @@ spring:
           ####搜索目录
           search-paths:
             - config
+            #####github账号密码，由于是public的，所以可以直接访问不需要配置这个
+#          username: 838689269@qq.com
+#          password:
+          ####私钥验证的密码
+          passphrase: 123456
       ####读取分支
       label: master
 ####端口号
