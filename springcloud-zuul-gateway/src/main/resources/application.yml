@@ -11,3 +11,11 @@ spring:
     name: service-zuul
   profiles:
     active: dev
+  cloud:
+    config:
+      ####读取后缀
+      profile: dev
+      ####读取config-server注册地址
+      discovery:
+        service-id: config-server
+        enabled: true
