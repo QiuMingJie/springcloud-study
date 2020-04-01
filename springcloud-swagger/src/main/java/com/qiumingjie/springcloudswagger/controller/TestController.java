@@ -29,7 +29,9 @@ public class TestController {
     @ApiImplicitParam(name = "student", value = "学生", required = true, dataType = "Student")
     @PostMapping("/getStudent")
     public Student getStudent(Student student) {
-
-        return new Student();
+        Student student1 = new Student();
+        student1.setId("123");
+        student1.setName("fds");
+        return student1;
     }
 }
